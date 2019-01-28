@@ -8,6 +8,7 @@ variables:
 
 before_script:
 - export GRADLE_USER_HOME=`pwd`/.gradle
+- apt-get install protobuf-compiler
 
 cache:
   paths:
