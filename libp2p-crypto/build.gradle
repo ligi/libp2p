@@ -21,7 +21,10 @@ sourceSets {
 }
 
 protobuf {
-    protoc { artifact = "com.google.protobuf:protoc:$protocVersion" }
+    protoc {
+        artifact = "com.google.protobuf:protoc:$protocVersion"
+        path = '/foo'
+    }
 
     clean { delete protobuf.generatedFilesBaseDir }
 
