@@ -8,6 +8,8 @@ variables:
 
 before_script:
 - export GRADLE_USER_HOME=`pwd`/.gradle
+- apt-get update
+- apt-get install -y -qq sshpass
 
 # https://github.com/google/protobuf-gradle-plugin/issues/265
 # Our artifacts are compiled for glibc, but alpine expects musl.
