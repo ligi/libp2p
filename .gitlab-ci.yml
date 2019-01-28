@@ -9,6 +9,11 @@ variables:
 before_script:
 - export GRADLE_USER_HOME=`pwd`/.gradle
 
+# https://github.com/google/protobuf-gradle-plugin/issues/265
+# Our artifacts are compiled for glibc, but alpine expects musl.
+# You can use one of the packages from alpine instead:
+#   https://pkgs.alpinelinux.org/packages?name=protobuf&branch=edge
+
 cache:
   paths:
   - .m2/repository/
@@ -22,8 +27,8 @@ stages:
 build:
   stage: build
   script:
-  - apk update
-  - apk add protobuf-compiler
+#  - apk update
+#  - apk add protobuf-compiler
   - ./gradlew clean build -x test
 
 unit tests:
