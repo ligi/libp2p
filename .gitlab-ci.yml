@@ -22,8 +22,8 @@ stages:
 build:
   stage: build
   script:
-  - sudo apk update
-  - sudo apk add protobuf-compiler
+  - apk update
+  - apk add protobuf-compiler
   - ./gradlew clean build -x test
 
 unit tests:
