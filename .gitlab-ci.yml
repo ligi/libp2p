@@ -22,9 +22,8 @@ stages:
 build:
   stage: build
   script:
-  - apt-get update -y
-  - apt-get install protobuf-compiler
-  - ./gradlew clean build -x test
+  - apk update && apk add protobuf-compiler
+#  - ./gradlew clean build -x test
 
 unit tests:
   stage: test
